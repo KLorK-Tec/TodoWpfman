@@ -1,0 +1,105 @@
+﻿<Window x:Name="window" x:Class="WpfApp1test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1test"
+        xmlns:data="clr-namespace:System.Data.SqlClient;assembly=System.Data"
+        xmlns:sysdata="clr-namespace:System.Data;assembly=System.Data.Common"
+        xmlns:mongo="clr-namespace:MongoDB.Driver;assembly=MongoDB.Driver"
+        xmlns:bson="clr-namespace:MongoDB.Bson;assembly=MongoDB.Bson"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="0,0,0,-16" AutomationProperties.AcceleratorKey="{Binding ElementName=button, Mode=OneWay}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="349*"/>
+            <RowDefinition Height="180*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="b0" Content="Add a Todo" Margin="587,85,32,0" VerticalAlignment="Top" Height="53" Click="Button_Click" Foreground="#FFD2D2D2" BorderBrush="#FF0C0B0B" RenderTransformOrigin="0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.Transform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-7.125"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.Transform>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="-396.87" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF242A90" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Slider HorizontalAlignment="Left" Margin="10,141,0 ,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ToDoMan" HorizontalAlignment="Left" Margin="27,17,0,0" VerticalAlignment="Top" Height="54" Width="241" FontSize="36"/>
+        <ListView x:Name="lv1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="41,121,0,30" Grid.RowSpan="2" FontSize="16" BorderThickness="1,1,2,1" FontWeight="{Binding FlowDirection, ElementName=lv1}" HorizontalAlignment="Left" Width="521" FontFamily="OCR A Extended" SelectionChanged="listView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Todo" Width="{Binding ActualWidth.MaxValue, ElementName=window}">
+
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Exit&#xD;&#xA;" HorizontalAlignment="Left" Margin="685,83,0,0" Grid.Row="1" VerticalAlignment="Top" Height="50" Width="105" Click="Button_Click_1"/>
+        <TextBox x:Name="Tb1" HorizontalAlignment="Left" Margin="242,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="27" TextChanged="TextBox_TextChanged" BorderBrush="#FF003CF1"/>
+        <Button x:Name="b0_Copy" Content="Show Todos&#xD;&#xA;" Margin="587,138,32,0" VerticalAlignment="Top" Height="53" Click="Button_Click1" Foreground="#FFD2D2D2" BorderBrush="#FF0C0B0B" RenderTransformOrigin="0,0">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.Transform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-7.125"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.Transform>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="-396.87" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF242A90" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Delete selected&#xD;&#xA;" HorizontalAlignment="Left" Margin="587,191,0,0" VerticalAlignment="Top" Height="50" Width="181" BorderBrush="#FF5A3232" Foreground="#FFFFF9F9" Click="Button_Click_2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFCE3333" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
